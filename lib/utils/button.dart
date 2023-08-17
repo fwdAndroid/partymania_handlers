@@ -1,0 +1,68 @@
+import 'package:flutter/material.dart';
+import 'package:partymania_handlers/utils/colors.dart';
+
+// ignore: must_be_immutable
+class SaveButton extends StatelessWidget {
+  String title;
+  final void Function()? onTap;
+
+  SaveButton({super.key, required this.title, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+        decoration: BoxDecoration(
+          gradient: const LinearGradient(colors: [
+            Color(0xff823DD8),
+            Color(0xff803DDA),
+            Color(0xffF80354)
+            //add more colors
+          ]),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: ElevatedButton(
+          onPressed: onTap,
+          style: ElevatedButton.styleFrom(
+              fixedSize: Size(340, 49),
+              backgroundColor: Colors.transparent,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10))),
+          child: Text(
+            title,
+            style: TextStyle(
+                fontSize: 14,
+                fontFamily: "Mulish",
+                fontWeight: FontWeight.w500,
+                color: textColor),
+          ),
+        ));
+  }
+}
+
+// ignore: must_be_immutable
+class ShareButton extends StatelessWidget {
+  String title;
+  final void Function()? onTap;
+
+  ShareButton({super.key, required this.title, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onTap,
+      style: ElevatedButton.styleFrom(
+          backgroundColor: Color(0xff4E4E4E),
+          side: BorderSide(color: textColor.withOpacity(.4), width: .5),
+          fixedSize: Size(246, 48),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+      child: Text(
+        title,
+        style: TextStyle(
+            fontFamily: "Mulish",
+            fontWeight: FontWeight.w600,
+            color: textColor),
+      ),
+    );
+  }
+}
