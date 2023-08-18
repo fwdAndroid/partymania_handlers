@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:partymania_handlers/screens/main_dashboard.dart';
+import 'package:partymania_handlers/utils/button.dart';
 import 'package:partymania_handlers/utils/colors.dart';
 import 'package:partymania_handlers/utils/controllers.dart';
 import 'package:partymania_handlers/utils/textformfield.dart';
@@ -111,6 +113,12 @@ class _HelpState extends State<Help> {
               ],
             ),
           ),
+          SaveButton(
+              title: "Submit",
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => MainScreen()));
+              })
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:partymania_handlers/screens/auth/getotp.dart';
 import 'package:partymania_handlers/screens/auth/signup_account.dart';
 import 'package:partymania_handlers/screens/main_dashboard.dart';
 import 'package:partymania_handlers/utils/button.dart';
@@ -64,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   TextFormInputField(
                       preIcon: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: Image.asset(
                           "assets/sms.png",
                           width: 15,
@@ -94,8 +95,19 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 5,
                   ),
                   TextFormInputField(
+                      suIcon: TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (builder) => GetOtp()));
+                          },
+                          child: Text(
+                            "Get OTP",
+                            style: TextStyle(color: otpColor),
+                          )),
                       preIcon: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(16.0),
                         child: Image.asset(
                           "assets/lock.png",
                           width: 15,
